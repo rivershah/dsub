@@ -20,7 +20,7 @@ _DEPENDENCIES = [
     'google-auth>=2.6.6,<=2.29.0',
     'google-cloud-batch<=0.17.20',
     'python-dateutil<=2.9.0',
-    'pytz<=2024.1',
+    'pytz',
     'pyyaml<=6.0.1',
     'tenacity<=8.2.3',
     'tabulate<=0.9.0',
