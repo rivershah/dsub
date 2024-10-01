@@ -657,7 +657,7 @@ class GoogleV2JobProviderBase(google_utils.GoogleJobProviderBase):
   def _submit_pipeline(self, request):
     google_base_api = google_base.Api()
     operation = google_base_api.execute(self._pipelines_run_api(request))
-    print('Provider internal-id (operation): {}'.format(operation['name']))
+    #  print('Provider internal-id (operation): {}'.format(operation['name']))
 
     return GoogleOperation(self._provider_name, operation).get_field('task-id')
 

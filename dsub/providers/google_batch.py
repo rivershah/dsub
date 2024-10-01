@@ -824,7 +824,7 @@ class GoogleBatchJobProvider(google_utils.GoogleJobProviderBase):
     client = batch_v1.BatchServiceClient()
     job_response = client.create_job(request=request)
     op = GoogleBatchOperation(job_response)
-    print(f'Provider internal-id (operation): {job_response.name}')
+    #  print(f'Provider internal-id (operation): {job_response.name}')
     return op.get_field('task-id')
 
   def submit_job(
