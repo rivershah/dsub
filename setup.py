@@ -26,7 +26,7 @@ _DEPENDENCIES = [
     'tabulate<=0.9.0',
     # downstream dependencies
     'funcsigs==1.0.2',
-    'google-api-core>=2.7.3,<=2.19.0',
+    'google-api-core>=2.7.3,<=3.0.0',
     'google-auth-httplib2<=0.2.0',
     'httplib2<=0.22.0',
     'protobuf>=3.19.0,<=5.26.0',
