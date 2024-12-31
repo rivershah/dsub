@@ -1294,11 +1294,11 @@ def run(provider,
   _resolve_task_resources(job_metadata, job_resources, task_descriptors)
 
   # Job and task properties are now all resolved. Begin execution!
-  if not dry_run:
-    print('Job properties:')
-    print('  job-id: %s' % job_metadata['job-id'])
-    print('  job-name: %s' % job_metadata['job-name'])
-    print('  user-id: %s' % job_metadata['user-id'])
+  # if not dry_run:
+  #   print('Job properties:')
+  #   print('  job-id: %s' % job_metadata['job-id'])
+  #   print('  job-name: %s' % job_metadata['job-name'])
+  #   print('  user-id: %s' % job_metadata['user-id'])
 
   # Wait for predecessor jobs (if any)
   if after:
