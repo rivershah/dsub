@@ -129,7 +129,7 @@ def copy_log_to_staging(glob_str: str, staging_path: str, filter_str: str = None
 # We know the log file is named output-<job-uid>.log
 # and the stdout/stderr files are named stdout-<job-uid>.log and
 # stderr-<job-uid>.log
-copy_log_to_staging("output-*.log", LOG_FILE_PATH)
+copy_log_to_staging("output-*.log", LOG_FILE_PATH, filter_str="*")
 copy_log_to_staging("stdout-*.log", STDOUT_FILE_PATH, filter_str="INFO")
 copy_log_to_staging("stderr-*.log", STDERR_FILE_PATH, filter_str="ERROR")
 """)
