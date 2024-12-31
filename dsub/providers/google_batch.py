@@ -108,8 +108,8 @@ USER_TASK = sys.argv[5]
 
 def filter_log_file(staging_path: str, stream_string: str):
   # Replaces lines in file inplace
+  re_search_string = re.compile(fr"^\[batch_task_logs\].*{stream_string}: \[task_id:task\/.*runnable_index:{USER_TASK}] (.*)")
   for line in fileinput.input(staging_path, inplace=True):
-    re_search_string = fr"^\[batch_task_logs\].*{stream_string}: \[task_id:task\/.*runnable_index:{USER_TASK}] (.*)"
     match = re.search(re_search_string, line)
     if match:
       modified_line = match.group(1)
@@ -129,7 +129,7 @@ def copy_log_to_staging(glob_str: str, staging_path: str, filter_str: str = None
 # We know the log file is named output-<job-uid>.log
 # and the stdout/stderr files are named stdout-<job-uid>.log and
 # stderr-<job-uid>.log
-copy_log_to_staging("output-*.log", LOG_FILE_PATH, filter_str="*")
+copy_log_to_staging("output-*.log", LOG_FILE_PATH, filter_str=".*")
 copy_log_to_staging("stdout-*.log", STDOUT_FILE_PATH, filter_str="INFO")
 copy_log_to_staging("stderr-*.log", STDERR_FILE_PATH, filter_str="ERROR")
 """)
