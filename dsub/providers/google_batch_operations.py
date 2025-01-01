@@ -364,7 +364,7 @@ def build_persistent_disk(
     size_gb: int, disk_type: str
 ) -> batch_v1.types.AllocationPolicy.Disk:
   disk = batch_v1.AllocationPolicy.Disk()
-  disk.type = disk_type
+  # disk.type = disk_type
   disk.size_gb = size_gb
   return disk
 
