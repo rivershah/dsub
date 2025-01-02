@@ -5,10 +5,9 @@ File is based on this template: https://github.com/pypa/sampleproject
 
 import os
 import unittest
-# Always prefer setuptools over distutils
-from setuptools import find_packages
-from setuptools import setup
 
+# Always prefer setuptools over distutils
+from setuptools import find_packages, setup
 
 _DEPENDENCIES = [
     # dependencies for dsub, ddel, dstat
@@ -81,7 +80,7 @@ setup(
     name='dsub',
 
     # Python 2 is no longer supported. Use Python 3.
-    python_requires='>=3.7',
+    python_requires='>=3.12',
 
     # Versions should comply with PEP440.
     version=get_dsub_version(),
@@ -116,10 +115,7 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.12',
     ],
 
     # What does your project relate to?
