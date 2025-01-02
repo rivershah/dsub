@@ -112,6 +112,7 @@ def filter_log_file(staging_path: str, stream_string: str):
     fr"^\\[batch_task_logs\\].*{stream_string}: \\[task_id:task\\/.*runnable_index:{USER_TASK}\\] (.*)"
   )
   for line in fileinput.input(staging_path, inplace=True):
+    line = line.replace('%', '%%')
     match = re.search(re_search_string, line)
     if match:
       modified_line = match.group(1)
