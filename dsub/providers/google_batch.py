@@ -108,7 +108,9 @@ USER_TASK = sys.argv[5]
 
 def filter_log_file(staging_path: str, stream_string: str):
   # Replaces lines in file inplace
-  re_search_string = re.compile(fr"^\[batch_task_logs\].*{stream_string}: \[task_id:task\/.*runnable_index:{USER_TASK}] (.*)")
+  re_search_string = re.compile(
+    fr"^\\[batch_task_logs\\].*{stream_string}: \\[task_id:task\\/.*runnable_index:{USER_TASK}\\] (.*)"
+  )
   for line in fileinput.input(staging_path, inplace=True):
     match = re.search(re_search_string, line)
     if match:
